@@ -4,3 +4,5 @@
         <p>{!! $post->body !!}</p>
     </div>
 </div>
+
+<livewire:show-comments :post="$post" />
