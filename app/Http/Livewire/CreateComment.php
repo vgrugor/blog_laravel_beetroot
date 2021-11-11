@@ -26,11 +26,14 @@ class CreateComment extends Component
 
     public function saveComment(){
         $this->validate();
+
         $this->comment->post_id = $this->post->id;
         $this->comment->user_id = -1;
         $this->comment->save();
+        $this->comment = new Comment();
         $this->saveSuccess = true;
-        $this->post->fresh();
+
+        $this->emit('commentsRefresh');
     }
 
     public function render()
