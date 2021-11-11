@@ -5,4 +5,6 @@
     </div>
 </div>
 
+<livewire:create-comment :post="$post"/>
+
 <livewire:show-comments :post="$post" />

@@ -9,8 +9,10 @@ class Post extends Component
 {
     public $post;
 
+
+
     public function mount($slug){
-        $this->post = BlogPost::where('slug', $slug)->first();
+        $this->post = BlogPost::with('comments')->where('slug', $slug)->first();
     }
 
     public function render()
